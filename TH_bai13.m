@@ -1,0 +1,21 @@
+A = [a -b -c;a  2*b -c;a  b -3*c];
+
+B = [10; 5; 2];
+
+M = [A B];
+% Ch?n ph?n t? ??u tiên c?a hàng ??u tiên làm ph?n t? chính
+piv = M(1, 1);
+M(1, :) = M(1, :) / piv;
+
+% S? d?ng phép bi?n ??i hàng ?? ??a các ph?n t? d??i ph?n t? chính v? 0
+M(2, :) = M(2, :) - M(2, 1)*M(1, :);
+M(3, :) = M(3, :) - M(3, 1)*M(1, :);
+
+% Ch?n ph?n t? ??u tiên c?a hàng th? hai làm ph?n t? chính
+piv = M(2, 2);
+M(2, :) = M(2, :) / piv;
+
+% S? d?ng phép bi?n ??i hàng ?? ??a ph?n t? d??i ph?n t? chính v? 0
+M(3, :) = M(3, :) - M(3, 2)*M(2, :);
+
+% Ch?n ph?n t? ??u tiên c?a hàng th? ba làm ph?n t? chí
