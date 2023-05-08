@@ -1,0 +1,11 @@
+t=0:10:360;
+p=0:10:360; 
+R=3;
+[T,P]=meshgrid(t,p); 
+Z = R*sin(pi*T./180); 
+X = R*sqrt(R^2-Z.^2).*cos(pi*P./180);
+Y = R*sqrt(R^2-Z.^2).*sin(pi*P./180); 
+surf(X,Y,Z); 
+xlabel('x-axis'); 
+ylabel('y-axis'); 
+zlabel('F');
